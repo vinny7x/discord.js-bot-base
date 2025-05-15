@@ -1,24 +1,20 @@
-const Discord = require('discord.js');
+const Discord = require("discord.js");
 require("colors");
 
 module.exports = {
   name: "ready",
   once: true,
   async execute(client) {
-
-   
-
     function atualizarStatus() {
-
       client.user.setPresence({
-        status: 'online',
+        status: "online",
         activities: [
           {
             name: "Tou on :)",
             type: Discord.ActivityType.Custom,
-            state: frase
-          }
-        ]
+            state: frase,
+          },
+        ],
       });
     }
 

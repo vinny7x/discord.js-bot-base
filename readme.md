@@ -63,6 +63,7 @@ Handlers/
 ## 🧪 Exemplos
 
 As pastas `Commands/prefix/exemple/` e `Commands/slash/exemple/` contêm **exemplos** para uso e testes. Você pode:
+
 - Copiar um exemplo e modificar
 - Criar seus próprios comandos seguindo o mesmo padrão
 - Remover os exemplos se desejar
@@ -74,14 +75,14 @@ As pastas `Commands/prefix/exemple/` e `Commands/slash/exemple/` contêm **exemp
 ### 📘 Slash Command (em `Commands/slash/`):
 
 ```js
-const { SlashCommandBuilder } = require('discord.js');
+const { SlashCommandBuilder } = require("discord.js");
 
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName('ping')
-    .setDescription('Responde com pong!'),
+    .setName("ping")
+    .setDescription("Responde com pong!"),
   async execute(interaction) {
-    await interaction.reply('🏓 Pong!');
+    await interaction.reply("🏓 Pong!");
   },
 };
 ```
@@ -90,9 +91,9 @@ module.exports = {
 
 ```js
 module.exports = {
-  name: 'ping',
+  name: "ping",
   async execute(message, args) {
-    message.reply('🏓 Pong!');
+    message.reply("🏓 Pong!");
   },
 };
 ```

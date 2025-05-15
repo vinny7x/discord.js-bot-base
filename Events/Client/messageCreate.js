@@ -9,7 +9,7 @@ client.on("messageCreate", async (message) => {
     message.content.includes(client.user.toString())
   ) {
     return message.reply(
-      `:x: **${message.author.displayName}** Desculpe, não posso responder às menções em mensagens diretas.`,
+      `:x: **${message.author.displayName}** Desculpe, não posso responder às menções em mensagens diretas.`
     );
   }
 
@@ -23,7 +23,7 @@ client.on("messageCreate", async (message) => {
   // Se a mensagem não começar com um prefixo, verifica se é uma menção direta ao bot
   if (!prefixUsed) {
     prefixUsed = botMentions.find((mention) =>
-      message.content.startsWith(mention),
+      message.content.startsWith(mention)
     );
   }
 
@@ -32,7 +32,7 @@ client.on("messageCreate", async (message) => {
   // Verifique se a mensagem foi enviada em uma guild (servidor)
   if (!message.guild) {
     return message.reply(
-      `:x: **${message.author.displayName}** Desculpe, não é possível usar comandos em mensagens diretas.`,
+      `:x: **${message.author.displayName}** Desculpe, não é possível usar comandos em mensagens diretas.`
     );
   }
 
@@ -41,7 +41,7 @@ client.on("messageCreate", async (message) => {
   const cmd =
     client.prefix.get(commandName) ||
     client.prefix.find(
-      (als) => als.aliases && als.aliases.includes(commandName),
+      (als) => als.aliases && als.aliases.includes(commandName)
     );
   if (cmd) {
     await cmd.run(client, message, args);
@@ -59,14 +59,14 @@ client.on("messageCreate", async (message) => {
     return;
   }
   if (
-  message.content === `<@${client.user.id}>` ||
-  message.content === `<@!${client.user.id}>`
-) {
-  const embed = new Discord.EmbedBuilder()
-    .setTitle(`👋 Olá!`)
-    .setColor("#00bfff")
-    .setDescription(`👋 Olá :)!`);
+    message.content === `<@${client.user.id}>` ||
+    message.content === `<@!${client.user.id}>`
+  ) {
+    const embed = new Discord.EmbedBuilder()
+      .setTitle(`👋 Olá!`)
+      .setColor("#00bfff")
+      .setDescription(`👋 Olá :)!`);
 
-  message.reply({ embeds: [embed] });
-}
+    message.reply({ embeds: [embed] });
+  }
 });
